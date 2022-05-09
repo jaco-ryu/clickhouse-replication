@@ -1,0 +1,26 @@
+<yandex>
+    <remote_servers>
+        <adpaymentsandbox>
+            <shard>
+                <replica>
+                    <host>10.24.29.85</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>10.24.25.112</host>
+                    <port>9000</port>
+                </replica>
+            </shard>
+            <shard>
+                <replica>
+                    <host>10.24.27.98</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>10.24.26.146</host>
+                    <port>9000</port>
+                </replica>
+            </shard>
+        </adpaymentsandbox>
+    </remote_servers>
+</yandex>

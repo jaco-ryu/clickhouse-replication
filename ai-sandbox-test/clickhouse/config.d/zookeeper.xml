@@ -1,0 +1,32 @@
+<yandex>
+    <zookeeper>
+        <node>
+            <host>10.24.25.138</host>
+            <port>2181</port>
+        </node>
+        <node>
+            <host>10.24.28.246</host>
+            <port>2181</port>
+        </node>
+        <node>
+            <host>10.24.26.195</host>
+            <port>2181</port>
+        </node>
+        <session_timeout_ms>30000</session_timeout_ms>
+        <operation_timeout_ms>10000</operation_timeout_ms>
+        <!-- Optional. Chroot suffix. Should exist. -->
+        <!-- <root>/path/to/zookeeper/node</root> -->
+        <root>/ai/sandbox/ip/ad-payment</root>
+        <!-- Optional. ZooKeeper digest ACL string. -->
+        <!-- <identity>user:password</identity> -->
+    </zookeeper>
+    <!-- Allow to execute distributed DDL queries (CREATE, DROP, ALTER, RENAME) on cluster. -->
+    <!-- Works only if ZooKeeper is enabled. Comment it out if such functionality isn't required. -->
+    <distributed_ddl>
+        <!-- Path in ZooKeeper to queue with DDL queries -->
+        <path>/report/clickhouse/task_queue/ddl</path>
+
+        <!-- Settings from this profile will be used to execute DDL queries -->
+        <!-- <profile>default</profile> -->
+    </distributed_ddl>
+</yandex>

@@ -1,0 +1,7 @@
+<yandex>
+    <macros>
+        <cluster>adpaymentsandbox</cluster>
+        <shard>1</shard>
+        <replica>10.24.25.112</replica>
+    </macros>
+</yandex>
