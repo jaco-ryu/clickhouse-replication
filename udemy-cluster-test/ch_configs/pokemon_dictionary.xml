@@ -1,0 +1,38 @@
+<yandex>
+    <dictionary>
+        <name>pokemon_dict</name>
+
+        <source>
+            <file>
+                <path>/opt/dictionaries/pokemon.csv</path>
+                <format>CSV</format>
+            </file>
+        </source>
+
+        <lifetime>
+            <min>300</min>
+            <max>360</max>
+        </lifetime>
+
+        <layout>
+            <flat/>
+        </layout>
+
+        <structure>
+            <id>
+                <name>id</name>
+            </id>
+            <attribute>
+                <name>name</name>
+                <type>String</type>
+                <null_value>Solo</null_value>
+            </attribute>
+            <attribute>
+                <name>pet_name</name>
+                <type>String</type>
+                <null_value>Rex</null_value>
+            </attribute>
+        </structure>
+    </dictionary>
+
+</yandex>
