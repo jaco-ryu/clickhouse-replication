@@ -123,22 +123,22 @@
             <shard>
                 <internal_replication>true</internal_replication>
                 <replica>
-                    <host>ch-sub-1</host>
+                    <host>ch-sub-1-az1</host>
                     <port>9000</port>
                 </replica>
                 <replica>
-                    <host>ch-sub-2</host>
+                    <host>ch-sub-2-az2</host>
                     <port>9000</port>
                 </replica>
             </shard>
             <shard>
                 <internal_replication>true</internal_replication>
                 <replica>
-                    <host>ch-sub-3</host>
+                    <host>ch-sub-3-az1</host>
                     <port>9000</port>
                 </replica>
                 <replica>
-                    <host>ch-sub-4</host>
+                    <host>ch-sub-4-az2</host>
                     <port>9000</port>
                 </replica>
             </shard>

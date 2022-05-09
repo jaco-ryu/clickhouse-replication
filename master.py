@@ -6,6 +6,46 @@ if __name__ == "__main__":
 
     client.execute("CREATE DATABASE IF NOT EXISTS billing")
 
+    # CREATE
+    # TABLE
+    # IF
+    # NOT
+    # EXISTS
+    # billing.transactions_local(
+    #     timestamp
+    # DateTime,
+    # currency
+    # String,
+    # value
+    # Float64)
+    # ENGINE = ReplicatedMergeTree('/clickhouse/tables/{shard}/billing.transactions', '{replica}')
+    # PARTITION
+    # BY
+    # currency
+    # ORDER
+    # BY
+    # timestamp
+    #
+    # CREATE
+    # TABLE
+    # IF
+    # NOT
+    # EXISTS
+    # billing.transactions(
+    #     timestamp
+    # DateTime,
+    # currency
+    # String,
+    # value
+    # Float64)
+    # ENGINE = Distributed(example_cluster, billing, transactions_local, rand())
+
+    client.execute('''CREATE TABLE IF NOT EXISTS billing.transactions(
+                      timestamp DateTime,
+                      currency String,
+                      value Float64)
+                      ENGINE = Distributed(example_cluster, billing, transactions, rand())''')
+
     client.execute('''CREATE TABLE IF NOT EXISTS billing.transactions(
                       timestamp DateTime,
                       currency String,

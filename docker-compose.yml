@@ -13,10 +13,10 @@ services:
     image: yandex/clickhouse-server:19.14.13.4
     depends_on:
       - ch-zookeeper
-      - ch-sub-1
-      - ch-sub-2
-      - ch-sub-3
-      - ch-sub-4
+      - ch-sub-1-az1
+      - ch-sub-2-az2
+      - ch-sub-3-az2
+      - ch-sub-4-az2
     ports:
       - 9000:9000
       - 8123:8123
@@ -29,7 +29,7 @@ services:
         target: /var/log/clickhouse-server
       - ./master-config.xml:/etc/clickhouse-server/config.xml
 
-  ch-sub-1:
+  ch-sub-1-az1:
     container_name: ch_sub_1
     image: yandex/clickhouse-server:19.14.13.4
     depends_on:
@@ -46,7 +46,7 @@ services:
         target: /var/log/clickhouse-server
       - ./sub-1-config.xml:/etc/clickhouse-server/config.xml
 
-  ch-sub-2:
+  ch-sub-2-az2:
     container_name: ch_sub_2
     image: yandex/clickhouse-server:19.14.13.4
     depends_on:
@@ -63,7 +63,7 @@ services:
         target: /var/log/clickhouse-server
       - ./sub-2-config.xml:/etc/clickhouse-server/config.xml
 
-  ch-sub-3:
+  ch-sub-3-az1:
     container_name: ch_sub_3
     image: yandex/clickhouse-server:19.14.13.4
     depends_on:
@@ -80,7 +80,7 @@ services:
         target: /var/log/clickhouse-server
       - ./sub-3-config.xml:/etc/clickhouse-server/config.xml
 
-  ch-sub-4:
+  ch-sub-4-az2:
     container_name: ch_sub_4
     image: yandex/clickhouse-server:19.14.13.4
     depends_on:
