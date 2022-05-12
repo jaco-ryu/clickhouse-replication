@@ -67,4 +67,18 @@ Start clickhouse-server with:
 
 Start clickhouse-client with:
  clickhouse-client --password****
+
+CREATE TABLE IF NOT EXISTS billing.transactions_clone(
+                      timestamp DateTime,
+                      currency String,
+                      value Float64)
+                      ENGINE = ReplicatedMergeTree('/clickhouse/tables/{shard}/billing.transactions', '{replica}')
+                      PARTITION BY currency
+                      ORDER BY timestamp
+
      ```
+
+
+## 참조
+ - https://altinity.com/blog/how-to-set-up-a-clickhouse-cluster-with-zookeeper#Create_a_Sample_Replicated_Table
+ - 

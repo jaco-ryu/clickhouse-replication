@@ -40,18 +40,16 @@ if __name__ == "__main__":
     # Float64)
     # ENGINE = Distributed(example_cluster, billing, transactions_local, rand())
 
-    client.execute('''CREATE TABLE IF NOT EXISTS billing.transactions(
+    client.execute('''CREATE TABLE IF NOT EXISTS billing_remote.transactions(
                       timestamp DateTime,
                       currency String,
                       value Float64)
-                      ENGINE = Distributed(example_cluster, billing, transactions, rand())''')
-
+                      ENGINE = Distributed(adpaymentsandbox, billing, transactions, rand())''')
     client.execute('''CREATE TABLE IF NOT EXISTS billing.transactions(
-                      timestamp DateTime,
-                      currency String,
-                      value Float64)
-                      ENGINE = Distributed(example_cluster, billing, transactions, rand())''')
-
+                          timestamp DateTime,
+                          currency String,
+                          value Float64)
+                          ENGINE = Distributed(example_cluster, billing, transactions, rand())''')
     client.execute("INSERT INTO billing.transactions (timestamp, currency, value) VALUES", \
         [(datetime.utcnow(), "integrity", 38.9), (datetime.utcnow(), "voltage", 27.2), \
             (datetime.utcnow(), "resilience", 19.8)])
